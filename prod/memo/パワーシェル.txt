@@ -1,0 +1,16 @@
+#ポリシー変更
+Set-ExecutionPolicy RemoteSigned  <オプション>
+
+オプション
+プロセスのみ・・・-Scope Process
+ユーザーのみ・・・-Scope CurrentUser
+
+#管理者権限強制昇格（同じスクリプト）
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administrators")) { Start-Process powershell.exe "-File `"$PSCommandPath`"" -Verb RunAs; exit }
+
+#一時停止
+pause
+
+
+
+

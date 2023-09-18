@@ -1,0 +1,11 @@
+#自分のIPアドレスを調べる
+ipconfig /all
+
+#グループポリシー更新
+gpupdete /force
+
+#IP経路
+traceroute <宛先のipアドレス>
+
+#疎通確認
+ping <IPアドレス＞
